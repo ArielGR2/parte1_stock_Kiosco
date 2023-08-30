@@ -16,18 +16,17 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Comercio = void 0;
-var producto_1 = require("./producto");
 var stockdelLocal_1 = require("./stockdelLocal");
 var ventasRealizadas_1 = require("./ventasRealizadas");
-var rls = require("readline-sync");
 var Comercio = /** @class */ (function (_super) {
     __extends(Comercio, _super);
     function Comercio(nombre, cuit) {
         var _this = _super.call(this) || this;
         _this.nombre = nombre;
         _this.cuit = cuit;
-        _this.stock = [];
+        _this.itemsVendidos = [];
         return _this;
+        //this.stock = [];
     }
     Comercio.prototype.ventaContado = function () {
         console.log("Tendrá un descuento");
@@ -35,25 +34,17 @@ var Comercio = /** @class */ (function (_super) {
     Comercio.prototype.ventaTarjeta = function () {
         console.log("Tendrá un recargo");
     };
-    Comercio.prototype.crearProducto = function () {
-        console.log("Debe ingresar todos los datos del producto: ");
-        var id = rls.question("Ingrese Id del producto: ");
-        var descripcion = rls.question("Ingrese la descripción del producto: ");
-        var precio = rls.question("Ingrese precio del producto: ");
-        var stock = rls.question("Ingrese el stock existente del producto: ");
-        var producto1 = new producto_1.producto(id, descripcion, precio, stock);
-        console.log("El producto que se ingresó es: ", producto1.getIdproducto(), producto1.getIdDescripcion(), producto1.getPrecio(), producto1.getStock());
-        return producto1;
-    };
     Comercio.prototype.venderProducto = function (cant, aux) {
-        for (var i = 0; i < this.stock.length; i++) {
-            if (this.stock[i].getIdproducto() == aux.getIdproducto()) {
-                this.stock[i].setStock(this.stock[i].getStock() - cant);
+        var vectAux = this.getProductos();
+        console.log(vectAux);
+        for (var i = 0; i < vectAux.length; i++) {
+            if (vectAux[i].getIdproducto() == aux.getIdproducto()) {
+                vectAux[i].setStock(vectAux[i].getStock() - cant);
                 break;
             }
         }
-        var utemVendidos1 = new ventasRealizadas_1.ventasRealizadas(cant, aux);
-        this.itemsVendidos.push(utemVendidos1);
+        var itemVendidos1 = new ventasRealizadas_1.ventasRealizadas(cant, aux);
+        this.itemsVendidos.push(itemVendidos1);
     };
     Comercio.prototype.seVendio = function () {
         console.log("Se ha vendido los siguientes productos: ");
