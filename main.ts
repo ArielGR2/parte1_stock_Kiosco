@@ -40,7 +40,7 @@ kiosco1.buscarPrecio(producto1);
 console.log("Vendemos 1 de producto 1: ---------------------");*/
 kiosco1.venderProducto(5,producto1);
 kiosco1.mostrarStock();
-kiosco1.eliminarProducto(producto1);       // (VERIFICAR ESTA LINEA!!!!!!!!!!) V2 V3
+kiosco1.eliminarProducto(producto1);       // V2 V3 V4
 console.log("Muestra Stock despues de haber eliminado:  ---------------------");
 kiosco1.mostrarStock();
 console.log("Mostramos ventas (seVendio):  ---------------------");
