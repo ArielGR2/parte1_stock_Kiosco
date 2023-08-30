@@ -29,7 +29,7 @@ export class Comercio extends stockdelLocal implements CondicionVenta {
 
     public venderProducto(cant: number, aux: producto): void {
         let vectAux = this.getProductos();
-        console.log(vectAux);
+        //console.log(vectAux);
         for (let i: number = 0; i < vectAux.length; i++) {
             if (vectAux[i].getIdproducto() == aux.getIdproducto()) {
                 vectAux[i].setStock(vectAux[i].getStock() - cant);

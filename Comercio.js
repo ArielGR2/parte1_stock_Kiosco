@@ -36,11 +36,10 @@ var Comercio = /** @class */ (function (_super) {
     };
     Comercio.prototype.venderProducto = function (cant, aux) {
         var vectAux = this.getProductos();
-        console.log(vectAux);
+        //console.log(vectAux);
         for (var i = 0; i < vectAux.length; i++) {
             if (vectAux[i].getIdproducto() == aux.getIdproducto()) {
                 vectAux[i].setStock(vectAux[i].getStock() - cant);
-                break;
             }
         }
         var itemVendidos1 = new ventasRealizadas_1.ventasRealizadas(cant, aux);
