@@ -43,7 +43,7 @@ kiosco1.mostrarStock();
 console.log("Mostramos todo el Stock   ---------------------");
 kiosco1.mostrarStock();
 console.log("Eliminamos producto 1 ---------------------");
-kiosco1.eliminarProducto(producto1);        (VERIFICAR ESTA LINEA!!!!!!!!!!)
+kiosco1.eliminarProducto(producto1);        (VERIFICAR ESTA LINEA!!!!!!!!!!) V2
 console.log("Mostramos ventas:  ---------------------");
 kiosco1.seVendio();
 console.log("Mostramos todo el Stock---------------------");
