@@ -1,6 +1,4 @@
-export interface CondicionVenta  {
-    
-    ventaContado () : void;
-    ventaTarjeta () : void;
-
+export interface CondicionVenta {
+    ventaContado(): void;
+    ventaTarjeta(): void;
 }

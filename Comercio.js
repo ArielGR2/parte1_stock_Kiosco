@@ -16,8 +16,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Comercio = void 0;
-var stockdelLocal_1 = require("./stockdelLocal");
-var ventasRealizadas_1 = require("./ventasRealizadas");
+var StockdelLocal_1 = require("./StockdelLocal");
+var VentasRealizadas_1 = require("./VentasRealizadas");
 var Comercio = /** @class */ (function (_super) {
     __extends(Comercio, _super);
     function Comercio(nombre, cuit) {
@@ -26,23 +26,21 @@ var Comercio = /** @class */ (function (_super) {
         _this.cuit = cuit;
         _this.itemsVendidos = [];
         return _this;
-        //this.stock = [];
     }
     Comercio.prototype.ventaContado = function () {
-        console.log("Tendrá un descuento");
+        console.log("Tendrá un descuento por pago CONTADO");
     };
     Comercio.prototype.ventaTarjeta = function () {
-        console.log("Tendrá un recargo");
+        console.log("Tendrá un recargo por pago con TARJETA");
     };
     Comercio.prototype.venderProducto = function (cant, aux) {
         var vectAux = this.getProductos();
-        //console.log(vectAux);
         for (var i = 0; i < vectAux.length; i++) {
             if (vectAux[i].getIdproducto() == aux.getIdproducto()) {
                 vectAux[i].setStock(vectAux[i].getStock() - cant);
             }
         }
-        var itemVendidos1 = new ventasRealizadas_1.ventasRealizadas(cant, aux);
+        var itemVendidos1 = new VentasRealizadas_1.ventasRealizadas(cant, aux);
         this.itemsVendidos.push(itemVendidos1);
     };
     Comercio.prototype.seVendio = function () {
@@ -52,5 +50,5 @@ var Comercio = /** @class */ (function (_super) {
         });
     };
     return Comercio;
-}(stockdelLocal_1.stockdelLocal));
+}(StockdelLocal_1.stockdelLocal));
 exports.Comercio = Comercio;
