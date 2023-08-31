@@ -1,0 +1,25 @@
+• ¿Cuál es el beneficio de usar un lenguaje con tipos (Typescript)?
+
+JavaScript tiene la ventaja de ser mas flexible al momento de especificar los tipos de datos de una variable, ya que no es necesario definirlo de manera obligatoria.
+Esta ventaja de JavaScript nos puede jugar en contra durante la ejecucuión del código. 
+TypeScript por ser tipado nos permite visualizar errores de tipo mientras se escribe el código, ahorrando tiempo de buscarlos nosotros mismos luego de la ejecución del programa, mas que nada en proyectos largo. 
+Un ejemple sería el llamado de una función con parámetros, donde se espera un tipo de dato pero se recibe otro.
+El código TypeScript es mas amigable lo cual nos permite mejor legibilidad, sobre todo en proyectos grupales donde debemos interpretar código escrito por otras personas.
+
+• ¿A qué se le llama variable interna? ¿Por qué internas?
+
+Se refiere a los atributos que tienen los objetos de una determinada clase.
+Son internas porque no se pueden modificar ni visualizar por afuera de dicha clase.
+A esto se lo conoce como encapsulamiento que es uno de los fundamentos de la programación orientada a objetos. 
+Para cambiarle los estados a los atributos se utilizan los métodos propios o heredados.
+
+• Explicar la diferencia entre composición y herencia
+
+La composición permite que una clase mas simple sea parte de otra clase mas compleja. 
+La posibilidad de usar una clase como tipo de dato en otra clase nos permite diseñar soluciones que se ajuesten a modelos de la vida real.
+Mientras que la herencia nos permite pasarle atributos y métodos generales a clases que serán más particulares agregando los propios. De manera que nos permitirá tener a disposicion métodos sin tener que escribirlos nuevamente.  
+
+• Explicar el mecanismo que provee TypeScript para manejar casos en donde los parámetros que 
+le llegan a un método son inválidos
+
+La metodología utilizada en TypeScript para evitar que se detenga la ejecución de nuestro programa al llamar a un método con un parámetro inválido es encerrar en un bloque Try{} dicha llamada y manejar el error desde el bloque catch{}. A su vez podemos utilizar la herramienta Throw{} que nos permitirá lanzar errores que hayamos definido previamente como una nueva clase que simplifica la comprensión del error.
